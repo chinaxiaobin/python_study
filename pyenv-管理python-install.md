@@ -1,4 +1,5 @@
 ## 安装pyenv管理python
+```
 项目地址： https://github.com/pyenv/pyenv-installer
 
 默认系统自带的python版本为系统提供依赖，尽量不要使用系统自带的python版本
@@ -34,6 +35,7 @@ eval "$(pyenv virtualenv-init -)"
 
 
 root用户安装：
+```
 # export PYENV_ROOT=/opt/pyenv
 #curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
 #vim /etc/profile.d/pyenv.sh
@@ -44,7 +46,7 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 #source /etc/profiled.d/pyenv.sh  #这样对所有用户都生效
-
+```
 
 #pyenv使用
 
@@ -102,4 +104,4 @@ global名切换全局默认Python版本
 
 ### uninstall命令
 卸载某个版本， 包括虚拟环境
-
+```
