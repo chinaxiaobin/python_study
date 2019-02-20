@@ -35,18 +35,17 @@ eval "$(pyenv virtualenv-init -)"
 
 
 root用户安装：
-```
-# export PYENV_ROOT=/opt/pyenv
-#curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-#vim /etc/profile.d/pyenv.sh
-#安装完成后提示安装环境变量
+export PYENV_ROOT=/opt/pyenv
+curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
+vim /etc/profile.d/pyenv.sh
+安装完成后提示安装环境变量
 vim ~/.bash_profile
 export PATH="/opt/pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
 #source /etc/profiled.d/pyenv.sh  #这样对所有用户都生效
-```
+
 
 #pyenv使用
 
