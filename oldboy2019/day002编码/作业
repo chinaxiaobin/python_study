@@ -1,0 +1,207 @@
+Day2作业及默写
+1、判断下列列逻辑语句句的True,False.
+1)1 > 1 or 3 < 4 or 4 > 5 and 2 > 1 and 9 > 8 or 7 < 6
+  F or F or T
+  True
+
+2)not 2 > 1 and 3 < 4 or 4 > 5 and 2 > 1 and 9 > 8 or 7 < 6
+   F or F or F
+   False
+
+2、求出下列列逻辑语句句的值。
+1),8 or 3 and 4 or 2 and 0 or 9 and 7
+
+   8 or 4 or 0 or 7
+   8
+
+2),0 or 2 and 3 and 4 or 6 and 0 or 3
+
+   0 or 4 or 0 or 3
+   4
+
+3、下列列结果是什什么?
+
+1)、6 or 2 > 1     6   # 6 or 任何值读为6
+2)、3 or 2 > 1     3
+3)、0 or 5 < 4     False   #  5<4 是False  0 or False  先把False当0   0 or y 值为y  y是falase 这里就是false
+4)、5 < 4 or 3     3  # 0是假 1是真
+5)、2 > 1 or 6     True
+6)、3 and 2 > 1    True
+7)、0 and 3 > 1    0
+8)、2 > 1 and 3    3
+9)、3 > 1 and 0    0
+10)、3 > 1 and 2 or 2 < 3 and 3 and 4 or 3 > 2   2
+
+4、while循环语句句基本结构?
+    while 条件:
+        代码块
+        break
+        continue
+    else:
+        代码块
+
+5、利用while语句句写出猜⼤大⼩小的游戏: 设定⼀一个理理想数字⽐比如: 66，让⽤用户输⼊入数字，如果⽐66大，则显示猜测
+的结果⼤了;如果比66小，则显示猜测的结果⼩了;只有等于66，显示猜测结果 正确，然后退出循环。
+
+from random import randint
+
+n = randint(1, 100)
+while True:
+    num = int(input("请猜:"))
+    if num > n:
+        print("猜大了")
+    elif num < n:
+        print("猜小了")
+    else:
+        print("猜对了")
+        break
+
+
+
+
+6、在5题的基础上进⾏行行升级: 给⽤用户三次猜测机会，如果三次之内猜测对了了，则显示猜测正确，退出循
+环，如果三次之内没有猜测正确，则⾃自动退出循环，并显示‘太笨了了你....’。
+
+from random import randint
+
+n = randint(1, 100)
+count = 1
+while count <= 3:
+    num = int(input("请猜:"))
+    if num > n:
+        print("猜大了")
+    elif num < n:
+        print("猜小了")
+    else:
+        print("猜对了")
+        break
+    count = count + 1
+else:
+    print("太笨了")
+
+
+
+7.使⽤用while循环输⼊入1 2 3 4 5 6 8 9 10
+
+count = 1
+while count <= 10:
+    if count != 7:
+        print(count)
+    count += 1
+
+
+count = 1
+while count <= 10:
+    if count == 7:
+        count += 1
+        continue #停止当前本次循环,继续执行下次循环
+    print(count)
+    count += 1
+
+
+8.求1-100的所有数的和
+
+
+count = 1
+sum = 0
+while count <= 100:
+    sum = count + sum
+    count = count + 1
+print(sum)
+
+9.输出 1-100 内的所有奇数
+count = 1
+sum = 0
+while count <= 100:
+    print(count)
+    count = count + 2
+
+
+count = 1
+while count <= 100:
+    if count % 2 == 1:
+        print(count)
+    count += 1
+
+10.输出 1-100 内的所有偶数
+
+count = 0
+while count <= 100:
+    print(count)
+    count += 2
+
+
+count = 0
+while count <= 100:
+    if count % 2 == 0:
+        print(count)
+    count +=1
+
+
+11.求1-2+3-4+5 ... 99的所有数的和.
+
+sum = 0
+count = 1
+
+while count <= 99:
+    if count % 2 == 1:
+        sum += count
+    else:
+        sum -= count
+    count += 1
+
+print(count)
+print(sum)
+
+
+12.⽤用户登陆(三次输错机会)且每次输错误时显示剩余错误次数(提示:使⽤用
+字符串串格式化)
+
+count = 1
+while count <=3:
+    username = input("请输入你的用户名:")
+    password = input("请输入你的密码:")
+    if username == "alex" and password == "123":
+        print("恭喜你,登录成功")
+    else:
+        print("用户名或密码错误")
+    count += 1
+
+
+13. ⽤用户输⼊入⼀一个数. 判断这个数是否是⼀一个质数(升级题).
+
+count = 1
+while count <=3:
+    username = input("请输入你的用户名:")
+    password = input("请输入你的密码:")
+    if username == "alex" and password == "123":
+        print("恭喜你,登录成功")
+    else:
+        print("用户名或密码错误")
+    print("当前登录了%s次,剩余%s次" %(count,3-count))
+    count += 1
+
+
+
+14. 输⼊入⼀一个⼴广告标语. 判断这个⼴广告是否合法. 根据最新的⼴广告法来判断. ⼴广 告法内容过多. 我们就判断是否包含'最', '第⼀一', '稀缺', '国家级'等字样. 如果包 含. 提示, ⼴广告不不合法  
+    例如,
+     1. 老男孩python世界第一. ==> 不合法
+     2. 今年过年不收礼啊. 收礼只收脑白金. ==> 合法
+
+
+ads = input("请输入你的广告标语:")
+
+if "最" in ads or "第一" in ads or  "稀缺" in  ads or  "国家级" in ads:
+    print("不合法的广告")
+else:
+    print("合法的广告")
+
+
+
+
+14. 输入一个数. 判断这个数是几位数(用算法实现)(升级题)  
+    明⽇日默写代码:
+
+    1. 求1-100之间所有的数的和
+    2. And or not的含义和特征
+    3. break continue的含义. 有什什么区别

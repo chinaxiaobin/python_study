@@ -1,0 +1,54 @@
+今日主要内容:
+
+1. 什么是字典
+    dict 以{}表示,每一项用逗号隔开,内部元素用key:value的形式来保存数据
+    {"jj":"林俊杰","jay":"周杰伦"}
+
+    查询的效率非常高,通过key来查找元素
+    内部使用key来计算一个内存地址(暂时这么理解) hash算法  key必须是不可变的数据类型(key必须是可hash的数据类型)
+    可hash就是不可变
+
+2. 字典的增删改查
+    1.字典的新增:
+        dict["新key"] = value
+        dict.setdefault()
+    2.字典的删除
+        pop(key)   指定删除
+        popitem()  随机删除
+        clear()    清空
+        del  dict[key]   指定删除
+    3.修改
+        dic[key] = 新值
+        update()
+    4.查询
+        1. 用key直接查询 dict[key]
+        2. get(key,如果key不存在返回的数据)
+        3. setdefault()
+            1.执行新增流程 2. 查询结果
+    5.操作
+        1. keys() 获取所有键 这个返回的不是列表 很像列表
+        2. values() 获取所有值
+        3. items() 获取所有键值对,返回的是元组
+        解构,直接把元组或者列表中的数据拿出来
+        a,b,c = (a1,b1,c1) 必须一一对应
+
+    6. 遍历自动
+        for key in dict:
+            dict[key]
+
+        for k,v in dict.items():
+            print(k)
+            print(v)
+
+
+
+    预习:
+
+    1. == 和 is的区别(小数据池)
+    2. 再谈编码(decode(), encode())
+
+    建议: 1. 本周作业过一遍 2. 玩儿
+
+
+
+3. 字典嵌套
