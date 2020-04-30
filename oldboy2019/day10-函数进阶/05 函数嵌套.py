@@ -57,14 +57,57 @@
 # print(a)
 
 
-def outer():
-    a = 10
-    def inner():
-        a = 20
-        print(a)
-    print(a)
-    inner()
-    print(a)
-outer()
+# def outer():
+#     a = 10
+#     def inner():
+#         a = 20
+#         print(a)
+#     print(a)
+#     inner()
+#     print(a)
+# outer()
+#
+#
+# def outer():
+#     nonlocal a  #找的是局部当中，离他最近的上一层的那个变量
+#     a = 10
+#     def inner():
+#         a = 20
+#         print(a)
+#     print(a)
+#     inner()
+#     print(a)
+# outer()
 
 
+#1  2   3  4 3 3  1
+
+# a = 1
+# def fun_1():
+#     a = 2
+#     def fun_2():
+#         nonlocal a
+#         a = 3
+#         def fun_3():
+#             a = 4
+#             print(a)
+#         print(a)
+#         fun_3()
+#         print(a)
+#     print(a)
+#     fun_2()
+#     print(a)
+# print(a)
+# fun_1()
+# print(a)
+
+# global 引入全局变量  可以定义全局变量
+# nonlocal 引入局部中离他最近的外层变量
+
+
+def fun():
+    global a  #没有 也得有，自动帮你创建
+    a = 20
+
+fun()
+print(a)
